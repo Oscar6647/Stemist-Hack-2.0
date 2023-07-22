@@ -1,4 +1,3 @@
-# Written by Juan Pablo Gutiérrez
 from revChatGPT.V1 import Chatbot
 from decouple import config
 
@@ -6,12 +5,11 @@ chatbot = Chatbot(config={
   "access_token": config("Token")
 })
 
-while True:
-    prompt = input("You: ")
+# Create a function that receives a prompt and returns a response
+def ask(prompt):
     if prompt == "exit":
-        break
+        return
     print("Chatbot: ")
     for data in chatbot.ask(prompt):
         message = data["message"]
-    print(message)
-    
+    return message
