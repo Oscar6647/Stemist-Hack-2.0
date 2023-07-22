@@ -1,7 +1,2 @@
-{ 
-    "Text 1" : "Hello World!",
-    "Text 2" : "Is anyone Reading this?",
-    "Text 3" : "Are we really seeing this?",
-    "Text 4" : "Can you hear me?",
-    "Text 5" : "A"
-}
+{ "prompt": "aa", "completion": "bb" }
+{ "prompt": "cc", "completion": "dd" }

@@ -1,12 +1,12 @@
-import openai
+from revChatGPT.V1 import Chatbot
 from decouple import config
-
-openai.organization = "org-Xp6dWNZIKaKPkOGF5UhdhtG8"
-openai.api_key = config('OPEN_AI')
-
-print(openai.Model.list())
-
-openai.File.create(
-    file = open("testdata.jsonl","rb"),
-    purpose = 'fine-tune'
-)
+chatbot = Chatbot(config={
+  "access_token": config("Token")
+})
+prompt = input()
+response = ""
+for data in chatbot.ask(
+  prompt
+):
+    response = data["message"]
+print(response)
