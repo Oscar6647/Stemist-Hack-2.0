@@ -1,0 +1,6 @@
+-Test Api requests
+-Structure code to parse detection values
+-send to api and try to return info
+-close loop to user
+-after proven close loop branch out to tree
+-configure all parameters to establisj the two way
