@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEMist Hackathon</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <script src="https://kit.fontawesome.com/fe78d3a7da.js" crossorigin="anonymous"></script>
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Extra Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <style>
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="chat.html">Chat</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="board.html">Dashboard</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="" rel="nofollow" target="_blank">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="" rel="nofollow" target="_blank">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <button type="button" class="btn btn-secondary float-right" onclick="showPopup()">New Class</button>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar">
+          <div class="position-sticky" style="top: 0;">
+            <div class="list-group list-group-flush mx-3 mt-4" style="height: 100%;">
+              <!-- Add your sidebar links here -->
+              <a href="dashboard.html" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
+              </a>
+              <a href="board.html" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-chart-line fa-fw me-3"></i><span>Classes</span>
+              </a>
+              <a href="explore.html" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-chart-pie fa-fw me-3"></i><span>Explore</span>
+              </a>
+              <a href="calendar.html" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-calendar fa-fw me-3"></i><span>Calendar</span>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <!-- Card Section -->
+        <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="card mt-4">
+            <div class="card-header">
+              Featured
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Group-401</h5>
+              <p class="card-text">Class of 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <script>
+      function showPopup() {
+        var cardTitle = prompt('Enter the card title:');
+        var cardDescription = prompt('Enter the card description:');
+
+        if (cardTitle && cardDescription) {
+          var cardDiv = document.createElement('div');
+          cardDiv.className = 'card mt-4';
+          cardDiv.innerHTML = `
+          <div class="card-header">${cardTitle}</div>
+          <div class="card-body">
+            <h5 class="card-title">${cardTitle}</h5>
+            <p class="card-text">${cardDescription}</p>
+          </div>
+        `;
+
+          var mainContent = document.querySelector('.col-md-9');
+          mainContent.appendChild(cardDiv);
+        }
+      }
+    </script>
+</body>
+
+</html>
