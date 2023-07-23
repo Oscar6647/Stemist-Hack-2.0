@@ -1,4 +1,5 @@
-##Try it out here: https://oscar6647.github.io/Stemist-Hack-2.0/
+## Try it out here: 
+https://oscar6647.github.io/Stemist-Hack-2.0/
 
 ## EduHack Functionalities:
 <ol>
