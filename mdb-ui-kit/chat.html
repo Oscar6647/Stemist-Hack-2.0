@@ -88,18 +88,51 @@
             <div class="col">
                 <div class="file-uploader-div">
                     <input type="file" id="file-input" accept=".pdf" />
-                    <label for="file-input">Upload file </label>
+                    <label for="file-input">Upload file</label>
                 </div>
-                <p id="file-name" class="file-paragraph"></p>
             </div>
             <div class="col">
-                <div class="send-button" onclick="sendMessage()"
+                <div class="send-button" onclick="sendFile()"
                     style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background-color: #007bff; color: white; cursor: pointer; margin-top: 20px;">
 
                     <i class="fas fa-paper-plane"></i>
                 </div>
             </div>
         </div>
+
+        <!-- Include necessary JavaScript libraries -->
+        <script>
+            function sendFile() {
+                const fileInput = document.getElementById('file-input');
+                const file = fileInput.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (event) {
+                        const fileContent = event.target.result;
+
+                        // Call the backend API to send the file as a string
+                        fetch('https://us-east-2.aws.data.mongodb-api.com/app/data-iewax/endpoint/Upload', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ fileContent }),
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('File sent to MongoDB:', data);
+                            })
+                            .catch(error => {
+                                console.error('Error sending file:', error);
+                            });
+                    };
+
+                    reader.readAsText(file);
+                }
+            }
+        </script>
     </section>
 
     </section>
