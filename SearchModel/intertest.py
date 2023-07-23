@@ -77,7 +77,7 @@ def preprocess_input(input_line):
 
 # Function to receive inputs and make predictions
 def predict_from_terminal():
-    print("Enter the inputs separated by spaces (Categoría Subcategoria Edad_de_Estudiantes Tiempo_de_clase):")
+    print("Recieved Search Query from Webpage:")
     input_line = input()
 
     # Preprocess the input data
@@ -88,6 +88,7 @@ def predict_from_terminal():
 
     print("Predicted classes (joblib):")
     print(predictions)
+    print("Create a Memory Game and let students organize them accordingly to the chain")
 
 if __name__ == "__main__":
     predict_from_terminal()
