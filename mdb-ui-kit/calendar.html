@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMist Hackathon</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Extra Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <style>
+            @media (min-width: 992px) {
+                #intro {
+                    margin-top: -58.59px;
+                }
+            }
+
+            .navbar .nav-link {
+                color: #fff !important;
+            }
+        </style>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarExample01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="chat.html">Chat</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" aria-current="page" href="board.html">My Classes</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav d-flex flex-row">
+                        <!-- Icons -->
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="" rel="nofollow" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item me-3 me-lg-0">
+                            <a class="nav-link" href="" rel="nofollow" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h1 class="text-center mb-4">Google Calendar Integration</h1>
+    
+            <!-- Buttons for authorization and sign-out -->
+            <div class="text-center">
+              <button id="authorize_button" class="btn btn-primary" onclick="handleAuthClick()">Authorize</button>
+              <button id="signout_button" class="btn btn-danger" onclick="handleSignoutClick()">Sign Out</button>
+            </div>
+    
+            <!-- Form for creating events -->
+            <div id="eventForm" class="mt-4" style="display: none;">
+              <div class="mb-3">
+                <label for="eventTitle" class="form-label">Event Title:</label>
+                <input type="text" class="form-control" id="eventTitle" required>
+              </div>
+              <div class="mb-3">
+                <label for="eventDate" class="form-label">Event Date:</label>
+                <input type="date" class="form-control" id="eventDate" required>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="eventStartTime" class="form-label">Start Time:</label>
+                  <input type="time" class="form-control" id="eventStartTime" required>
+                </div>
+                <div class="col">
+                  <label for="eventEndTime" class="form-label">End Time:</label>
+                  <input type="time" class="form-control" id="eventEndTime" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="eventLocation" class="form-label">Event Location:</label>
+                <input type="text" class="form-control" id="eventLocation" required>
+              </div>
+              <button class="btn btn-success" onclick="createEvent()">Create Event</button>
+            </div>
+    
+            <!-- Container to display upcoming events -->
+            <div id="content" class="mt-5"></div>
+          </div>
+        </div>
+      </div>
+
+  
+    <script src="app.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+
+</body>
+
+
+</html>
